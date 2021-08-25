@@ -1,10 +1,10 @@
 --Создание представления "Отчет о предостоящих платежах"
 
 create or replace view upcoming_payments as
-select cl.cl_name
-     , pc.num_dog
-     , po.p_date
-     , sum(po.p_summa)
+select cl.cl_name      "ФИО клиента"
+     , pc.num_dog      "№ договора"
+     , po.p_date       "Дата предстоящей оплаты"
+     , sum(po.p_summa) "Сумма к оплате"
 from plan_oper po
    , pr_cred pc
    , client cl
